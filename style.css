@@ -1,0 +1,257 @@
+/* ToolShed - a little whimsical, still readable and high-contrast (WCAG 1.4.3) */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Trebuchet MS', 'Segoe UI', Verdana, sans-serif;
+    background: #fef6e4;
+    background-image:
+        radial-gradient(circle at 10% 10%, #ffe3b3 0, transparent 35%),
+        radial-gradient(circle at 90% 20%, #cdeffd 0, transparent 40%);
+    color: #1f2933;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}
+
+a {
+    color: #d1603d;
+}
+
+.wrap {
+    max-width: 420px;
+    margin: 60px auto;
+    padding: 0 16px;
+}
+
+.wrap.wide {
+    max-width: 900px;
+    margin: 24px auto;
+}
+
+.card {
+    background: #ffffff;
+    border: 3px solid #1f2933;
+    border-radius: 18px;
+    box-shadow: 6px 6px 0 #1f2933;
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+h1 {
+    font-size: 2rem;
+    margin: 0 0 4px;
+}
+
+.tagline {
+    color: #5b6b79;
+    margin-top: 0;
+    font-style: italic;
+}
+
+h2 {
+    border-bottom: 2px dashed #ffb703;
+    padding-bottom: 8px;
+    margin-top: 0;
+}
+
+/* forms */
+input, textarea, select, button {
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 10px 12px;
+    margin: 6px 0;
+    width: 100%;
+    border: 2px solid #1f2933;
+    border-radius: 10px;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 60px;
+}
+
+button {
+    background: #ffb703;
+    color: #1f2933;
+    font-weight: bold;
+    cursor: pointer;
+    border: 2px solid #1f2933;
+    transition: transform 0.1s ease;
+}
+
+button:hover, .btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 3px 3px 0 #1f2933;
+}
+
+button:focus, .btn:focus, a:focus, input:focus, select:focus, textarea:focus {
+    outline: 3px solid #219ebc;
+    outline-offset: 2px;
+}
+
+.item-form .row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.item-form select {
+    width: auto;
+    flex: 1;
+}
+
+.item-form button {
+    width: auto;
+    flex: 1;
+}
+
+/* messages */
+.msg {
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 2px solid #1f2933;
+    font-weight: bold;
+}
+
+.msg-error {
+    background: #ffd6d6;
+}
+
+.msg-success {
+    background: #d8f3dc;
+}
+
+.switch {
+    text-align: center;
+    margin-top: 12px;
+}
+
+/* topbar */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1f2933;
+    color: #fef6e4;
+    padding: 14px 24px;
+}
+
+.topbar h1 {
+    color: #ffb703;
+    margin: 0;
+}
+
+.who {
+    text-align: right;
+}
+
+.logout-link {
+    color: #cdeffd;
+    margin-left: 10px;
+}
+
+.foot {
+    text-align: center;
+    color: #5b6b79;
+    font-size: 0.85rem;
+    padding: 24px 0;
+}
+
+/* grid of browsable items */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+}
+
+.item-tile {
+    border: 2px solid #1f2933;
+    border-radius: 14px;
+    padding: 14px;
+    background: #fffaf0;
+    display: flex;
+    flex-direction: column;
+}
+
+.item-emoji {
+    font-size: 2rem;
+}
+
+.item-desc {
+    flex-grow: 1;
+    font-size: 0.9rem;
+    color: #3d4a54;
+}
+
+.item-meta {
+    font-size: 0.8rem;
+    color: #5b6b79;
+    margin: 2px 0;
+}
+
+.empty {
+    color: #5b6b79;
+    font-style: italic;
+}
+
+/* buttons used as links */
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 10px;
+    border: 2px solid #1f2933;
+    font-weight: bold;
+    color: #1f2933;
+}
+
+.btn.full {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.btn-yes {
+    background: #95d5b2;
+}
+
+.btn-no {
+    background: #ffb4a2;
+}
+
+/* request / listing lists */
+.req-list, .mine-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.req-list li, .mine-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid #e6e6e6;
+    flex-wrap: wrap;
+}
+
+.tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 999px;
+    margin-left: 8px;
+    border: 1px solid #1f2933;
+}
+
+.tag-available { background: #d8f3dc; }
+.tag-borrowed { background: #ffe5b4; }
+.tag-pending { background: #fff3b0; }
+.tag-approved { background: #cdeffd; }
+.tag-returned { background: #e2e2e2; }
+.tag-declined { background: #ffd6d6; }
